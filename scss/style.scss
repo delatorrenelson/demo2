@@ -8,5 +8,27 @@ html * {
 body{
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: lighten( gray, 0.3);
+    background-color: rgba(143, 143, 143, 0.116);
+}
+
+button{
+    padding: 4px 8px;
+    background-color: blue;
+    border-radius: 4px;
+    color: #fff;
+}
+
+input{
+    padding: 4px 8px;
+}
+
+#myToDo{
+    li{
+        background-color: rgb(10, 13, 207);
+        color: #fff;
+        padding: 8px;
+        margin: 10px;
+        border-radius: 8px;
+    }
+
 }
