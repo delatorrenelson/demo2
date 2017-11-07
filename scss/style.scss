@@ -11,24 +11,46 @@ body{
     background-color: rgba(143, 143, 143, 0.116);
 }
 
-button{
-    padding: 4px 8px;
-    background-color: blue;
-    border-radius: 4px;
+
+@mixin chats{
     color: #fff;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 6px;
 }
 
-input{
-    padding: 4px 8px;
+.wrapper{
+    display: flex;
+    flex-direction: column;
 }
 
-#myToDo{
-    li{
-        background-color: rgb(10, 13, 207);
-        color: #fff;
-        padding: 8px;
-        margin: 10px;
-        border-radius: 8px;
+#chatBox{
+    padding: 10px;
+    .message, .response{
+        @include chats;
     }
 
+    .message{
+        background-color: rgb(10, 13, 207);
+    }
+    .response{
+        background-color: rgb(0, 180, 27);
+    }    
+}
+
+#textField{
+    position: fixed;
+    top: 95%;
+    #send{
+        padding: 4px 8px;
+        background-color: blue;
+        border-radius: 4px;
+        color: #fff;
+        width: 20%;
+    }
+    
+    input{
+        padding: 4px 8px;
+        width: 70%;
+    }    
 }

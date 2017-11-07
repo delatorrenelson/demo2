@@ -1,4 +1,3 @@
-alert("Hello World");
 class Animals{
     live:1;
     canEat(food){

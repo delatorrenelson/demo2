@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Chats</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <p>
-            This is my sample repository.
-        </p>
-        <button id="mybutton">Click me</button>
-        <input type="text" id="txt">
-        <ul id="myToDo"></ul>
-        <h1 id="label"></h1>        
+    <div class="wrapper">                
+        <div id="chatBox">
+            <div class="message-container">
+                <p class="message">
+                    Message here
+                </p>
+                <p class="message-time">
+                    time here.
+                </p>
+            </div>
+
+            <div class="response-container">
+                <p class="response">
+                    Message here
+                </p>
+                <p class="response-time">
+                    time here.
+                </p>
+            </div>            
+        </div>
+
+        <div id="textField">            
+            <input type="text" id="myMessage">            
+            <input type="button" id="send" value="Send">
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
