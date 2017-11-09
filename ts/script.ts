@@ -1,36 +1,27 @@
-class Animals{
-    live:1;
-    canEat(food){
-        return "I'm eating.."+food;
-    }
-}
-
-class Mammals extends Animals{
-    canEat(fish:"fish");
-}
-
-let btn = document.getElementById("mybutton");
-let lbl = document.getElementById('label');
-
-btn.addEventListener('click',function(evt){
-    lbl.textContent = "You clicked he button";
-},false);
-
-let myTextField = document.getElementById("txt");
-
-myTextField.addEventListener("input",function(evt){
-    lbl.textContent = myTextField.value;
-},false);
+let btn_send = document.getElementById("send");
+let lbl = document.getElementById("label");
+let myTextField = document.getElementById("myMessage");
+let chatBox = document.getElementById("chatBox");
 
 let todo = [];
 
-let myToDo = document.getElementById("myToDo");
-
 myTextField.addEventListener("change",function(evt){
-    var item = document.createElement("li");
-    item.textContent = myTextField.value;
-    todo.push(item);
-    myToDo.appendChild(item);
+    var messageItem = document.createElement("div");
+    messageItem.className = "message-container";
+
+    var message = document.createElement("p");
+    message.textContent = myTextField.value;    
+
+    var time = document.createElement("p");
+    var date = new Date();
+    time.textContent = date.getMonth() +'/'+ date.getDate() +'/'+ date.getYear();
+    
+    messageItem.appendChild(message);
+    messageItem.appendChild(time);
+    chatBox.appendChild(messageItem);
+
+    todo.push(messageItem);    
+    
     myTextField.value = "";
     lbl.textContent = "";
 },false);
@@ -38,3 +29,23 @@ myTextField.addEventListener("change",function(evt){
 myTextField.addEventListener("contextmenu",function(evt){
     alert("context menu.");
 },false);
+
+class Greeter{
+    greeting:string;
+    constructor(msg:string){
+        this.greeting = msg;
+    }
+    greet(){
+        return "Hello, " + this.greeting;
+    }
+}
+
+let greeter = new Greeter("World");
+
+class myGreetings extends Greeter{
+    myGreets:string;
+    constructor(myMsg:string){
+        super();
+        this.myGreets;
+    }
+}

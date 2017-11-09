@@ -1,2 +1,4 @@
 *.scss
 *.ts
+*.config
+*.map

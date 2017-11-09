@@ -1,48 +1,44 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+var __extends = this && this.__extends || function() {
+    var e = Object.setPrototypeOf || {
+        __proto__: []
+    } instanceof Array && function(e, t) {
+        e.__proto__ = t;
+    } || function(e, t) {
+        for (var n in t) t.hasOwnProperty(n) && (e[n] = t[n]);
     };
-})();
-var Animals = (function () {
-    function Animals() {
-    }
-    Animals.prototype.canEat = function (food) {
-        return "I'm eating.." + food;
+    return function(t, n) {
+        function r() {
+            this.constructor = t;
+        }
+        e(t, n), t.prototype = null === n ? Object.create(n) : (r.prototype = n.prototype, 
+        new r());
     };
-    return Animals;
-}());
-var Mammals = (function (_super) {
-    __extends(Mammals, _super);
-    function Mammals() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return Mammals;
-}(Animals));
-var btn = document.getElementById("mybutton");
-var lbl = document.getElementById('label');
-btn.addEventListener('click', function (evt) {
-    lbl.textContent = "You clicked he button";
-}, false);
-var myTextField = document.getElementById("txt");
-myTextField.addEventListener("input", function (evt) {
-    lbl.textContent = myTextField.value;
-}, false);
-var todo = [];
-var myToDo = document.getElementById("myToDo");
-myTextField.addEventListener("change", function (evt) {
-    var item = document.createElement("li");
-    item.textContent = myTextField.value;
-    todo.push(item);
-    myToDo.appendChild(item);
-    myTextField.value = "";
+}(), btn_send = document.getElementById("send"), lbl = document.getElementById("label"), myTextField = document.getElementById("myMessage"), chatBox = document.getElementById("chatBox"), todo = [];
+
+myTextField.addEventListener("change", function(e) {
+    var t = document.createElement("div");
+    t.className = "message-container";
+    var n = document.createElement("p");
+    n.textContent = myTextField.value;
+    var r = document.createElement("p"), o = new Date();
+    r.textContent = o.getMonth() + "/" + o.getDate() + "/" + o.getYear(), t.appendChild(n), 
+    t.appendChild(r), chatBox.appendChild(t), todo.push(t), myTextField.value = "", 
     lbl.textContent = "";
-}, false);
-myTextField.addEventListener("contextmenu", function (evt) {
+}, !1), myTextField.addEventListener("contextmenu", function(e) {
     alert("context menu.");
-}, false);
-//# sourceMappingURL=script.js.map
+}, !1);
+
+var Greeter = function() {
+    function e(e) {
+        this.greeting = e;
+    }
+    return e.prototype.greet = function() {
+        return "Hello, " + this.greeting;
+    }, e;
+}(), greeter = new Greeter("World"), myGreetings = function(e) {
+    function t(t) {
+        var n = e.call(this) || this;
+        return n.myGreets, n;
+    }
+    return __extends(t, e), t;
+}(Greeter);
